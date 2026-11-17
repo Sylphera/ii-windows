@@ -690,6 +690,7 @@ fn record_pre_install(ctx: &mut Ctx) -> PreInstall {
 		accent_color: win::get_dword(win::DWM_KEY, "AccentColor"),
 		colorization_color: win::get_dword(win::DWM_KEY, "ColorizationColor"),
 		colorization_afterglow: win::get_dword(win::DWM_KEY, "ColorizationAfterglow"),
+		auto_colorization: win::get_dword(win::DESKTOP_KEY, "AutoColorization"),
 		other_instance_running: !others.is_empty(),
 		generic_cache_existed: Some(ctx.paths.generic_cache().exists()),
 		thumbnails_existed: Some(ctx.paths.generic_cache().join("thumbnails").exists()),
@@ -2576,6 +2577,15 @@ fn restore_look(ctx: &mut Ctx, m: &Manifest) {
 			match win::restore_dword(key, name, value) {
 				Ok(()) => ctx.info(format!("   {name}: {now:?} -> {value:?}")),
 				Err(e) => problems.push(format!("{name}: {e}")),
+			}
+		}
+	}
+	if let Some(value) = pre.auto_colorization {
+		let now = win::get_dword(win::DESKTOP_KEY, "AutoColorization");
+		if now != Some(value) {
+			match win::set_dword(win::DESKTOP_KEY, "AutoColorization", value) {
+				Ok(()) => ctx.info(format!("   AutoColorization: {now:?} -> {value}")),
+				Err(e) => problems.push(format!("AutoColorization: {e}")),
 			}
 		}
 	}

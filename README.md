@@ -57,7 +57,7 @@
   - **ii for Windows**: a fork of ii where the services keep their public properties and swap only the implementation, so most modules are untouched
   - **Equalizer**: the curve goes to [Equalizer APO](https://sourceforge.net/projects/equalizerapo/) (free, installed separately) through a file it includes; Realtek Audio Console, MaxxAudio, Dolby, DTS, Nahimic and other sound apps have no public API, so ii only opens them
   - **Live wallpapers**: Media Foundation decodes the video on the GPU in its own thread and hands frames to Qt through a shared D3D11 texture; one decoder per file for all monitors. Without a GPU it plays at up to 720p and 15 fps
-  - **Colors**: `matugen.exe` with ii's own template, so the palette from a wallpaper is the same as on Linux. Windows' wallpaper and light/dark mode follow what you pick in ii, and its accent color follows the palette
+  - **Colors**: `matugen.exe` with ii's own template, so the palette from a wallpaper is the same as on Linux. Windows' wallpaper and light/dark mode follow what you pick in ii, and its accent color follows the palette (Windows' automatic accent color is turned off)
   - Quickshell (based on upstream 0.3.2), matugen, the helpers and the setup are cross-compiled from Linux (clang-cl + xwin, Qt 6.11) and tested in a Windows 11 VM (with and without a passed-through GPU) and a Windows 10 22H2 VM. The ARM64 build is compiled natively on GitHub's Windows 11 ARM64 runner and tested there
 
 </details>

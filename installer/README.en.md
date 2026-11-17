@@ -149,8 +149,9 @@ light or dark mode, the accent color and whether the taskbar hides automatically
   changing it. When you pick a wallpaper or switch light/dark mode in ii, it sets the same in
   Windows: the desktop wallpaper and Windows' light/dark mode. The Windows **accent color** ii
   changes whenever it loads its palette, including every time it starts: it becomes the main
-  color of ii's palette. If you change the wallpaper in Windows' own settings, ii picks it up and
-  takes its colors from it.
+  color of ii's palette, and Windows' automatic accent color is turned off so it doesn't replace
+  it. If you change the wallpaper in Windows' own settings, ii picks it up and takes its colors
+  from it.
 - **Windows Terminal:** ii writes a color scheme matching its theme, plus font, cursor,
   padding and transparency settings for the PowerShell and Command Prompt profiles, as a Windows Terminal
   *fragment* in `%LOCALAPPDATA%\Microsoft\Windows Terminal\Fragments\illogical-impulse`. It does

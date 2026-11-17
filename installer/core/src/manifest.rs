@@ -115,6 +115,7 @@ pub struct PreInstall {
 	pub accent_color: Option<u32>,
 	pub colorization_color: Option<u32>,
 	pub colorization_afterglow: Option<u32>,
+	pub auto_colorization: Option<u32>,
 	pub wallpaper: Option<WallpaperState>,
 	pub generic_cache_existed: Option<bool>,
 	pub thumbnails_existed: Option<bool>,

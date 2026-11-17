@@ -159,8 +159,9 @@ tarefas se oculta automaticamente.
   Windows sem mudá-lo. Quando você escolhe um papel de parede ou alterna entre claro e escuro no
   ii, ele aplica o mesmo no Windows: o papel de parede da área de trabalho e o modo claro/escuro
   do Windows. A **cor de destaque** do Windows o ii muda sempre que carrega a paleta dele,
-  inclusive toda vez que abre: ela passa a ser a cor principal da paleta do ii. Se você trocar o
-  papel de parede nas configurações do próprio Windows, o ii acompanha e tira as cores dele.
+  inclusive toda vez que abre: ela passa a ser a cor principal da paleta do ii, e a cor de
+  destaque automática do Windows é desligada para não substituí-la. Se você trocar o papel de
+  parede nas configurações do próprio Windows, o ii acompanha e tira as cores dele.
 - **Windows Terminal:** o ii grava um esquema de cores igual ao tema dele, mais ajustes de fonte,
   cursor, margem e transparência para os perfis do PowerShell e do Prompt de Comando, como um
   *fragmento* do Windows Terminal em
