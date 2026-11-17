@@ -2032,6 +2032,10 @@ pub fn install(ctx: &mut Ctx, source: &Source, run: &RunOptions) -> bool {
 		let mut m = existing.clone().unwrap_or_else(|| Manifest::new(&ctx.paths.install_dir));
 		if m.pre_install.is_none() {
 			m.pre_install = Some(record_pre_install(ctx));
+		} else if let Some(pre) = m.pre_install.as_mut() {
+			if pre.auto_colorization.is_none() {
+				pre.auto_colorization = win::get_dword(win::DESKTOP_KEY, "AutoColorization");
+			}
 		}
 		swap_in(ctx, &pkg, wipe_on_failure)?;
 		ctx.log.open(&ctx.paths.log());
